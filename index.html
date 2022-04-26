@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo</title>
+    <link rel="stylesheet" href="./CSS/bootstrap.min.css">
+    <script src="./JS/jquery-3.6.0.min.js"></script>
+    <script src="./JS/bootstrap.min.js"></script>
+    <script src="./JS/index.js">
+        $(document).ready(function() {
+            $("#btn2").click(function() {
+                $("#myModal").modal()
+            })
+        })
+        $("#txtName").blur(function() {
+            let mauKT = /([A-Z]{1}[a-z]+)((\s{1}[A-Z]{1}[a-z]+){1,})$/;
+            if ($("name").val() == "") {
+                $("#tbName").html("Khong de trong");
+            }
+            if (!mauKT.test($("#Name").val())) {
+                $("#tbName").html("Moi ki tu dau viet hoa khong su dung so")
+            }
+        })
+    </script>
+</head>
+<div class="container">
+    <div class="col-xs-12">
+        <img src="./IMG/paner.jpg" alt="" width="100%">
+    </div>
+</div>
+<div class="col-xl-12">
+    <nav class="navbar navbar-expand-sm bg-light">
+        <ul class="nabbar nav">
+            <li class="navbar-item"><a class="nav-link" href="#" style="margin-right: 20px;" id="btn1">Dang nhap</a></li>
+            <li class="navbar-item"><a class="nav-link" href="#" style="margin-right: 20px;" id="btn2">Dang ki</a></li>
+        </ul>
+    </nav>
+</div>
+<div class="col-xl-12">
+    <h4 style=" text-align: center;"> DANH SACH DOI TUYEN VIET NAM</h4>
+    <table class=" table table-striped" role="table" id="danhSach">
+        <tr>
+            <td>STT</td>
+            <td>Ho Ten</td>
+            <td>So ao</td>
+            <td>Cau Lac Bo</td>
+            <td>Ngay tap trung</td>
+            <td>Dien Thoai</td>
+            <td>Anh Dai Dien</td>
+        </tr>
+    </table>
+</div>
+<footer>
+    <div class=" col-xl-12">
+        <p style="text-align: center;">MSSV:20064471-HoTen:Nguyễn Ngọc Đại Lợi </p>
+    </div>
+</footer>
+<div class=" modal fade" role="dialog" id="myModal">
+    <div class="modal-dialog" style="margin-top: 20px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="text-left"> THONG TIN CA NHAN</h2>
+            </div>
+            <div class="modal-body">
+                <form role="form" class="form-horizonal" style="margin-top: 10px;">
+                    <label for="Name" class="custom-control-label col-xl-3"> HO Ten</label>
+                    <div class="col-xl-9">
+                        <input type="text" id="Name" class="form-control"><span class="text-danger" id="txtName">*</span>
+                    </div>
+                    <label for="Ao" class="custom-control-label col-xl-3"> So ao</label>
+                    <div class="col-xl-9">
+                        <input type="text" id="Ao" class="form-control" style="margin: bottom 10px ;"><span class="text-danger" id="tbAo">*</span>
+                    </div>
+                    <label for="CLB" class="custom-control-label col-xl-3"> Cau Lac Bo</label>
+                    <div class="col-xl-9">
+                        <input type="text" id="CLB" class="form-control"><span class="text-danger" id="tbCLB">*</span>
+                    </div>
+                    <label for="NTT" class="custom-control-label col-xl-3">Ngay Tap trung</label>
+                    <div class="col-xl-9">
+                        <input type="text" id="NTT" class="form-control"><span class="text-danger" id="tbNTT">*</span>
+                    </div>
+                    <label for="SDT" class="custom-control-label col-xl-3"> Dien Thoai</label>
+                    <div class="col-xl-9">
+                        <input type="text" id="SDT" class="form-control"><span class="text-danger" id="tbSDT">*</span>
+                    </div>
+                    <label for="ADD" class="custom-control-label col-xl-3">Anh Dai Dien</label>
+                    <div class="col-xl-9">
+                        <input type="file" id="ADD" class="form-control">
+                        <span class="text-danger" style="color: red;" id="tbADD">*</span>
+                    </div>
+                    <button class="btn btn-success btn-group" id="Save" type="button" style="color: white; background-color: gray;">Luu</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<body>
+
+</body>
+
+</html>
